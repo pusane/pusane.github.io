@@ -1,0 +1,45 @@
+Akademik soy ağacı — Ali Emre Pusane|Erasmus ve Leibniz'den Euler, Gauss, Klein, Fano ve Massey üzerinden Ali Emre Pusane'ye uzanan etkileşimli bir akademik soy ağacı.|genealogy|assets/js/genealogy.js,assets/js/portraits.js
+<section class="page-hero has-bg">
+  <div class="hero-bg" data-portraits="[&quot;assets/img/portraits/erasmus.jpg&quot;, &quot;assets/img/portraits/snellius.jpg&quot;, &quot;assets/img/portraits/mersenne.jpg&quot;, &quot;assets/img/portraits/huygens.jpg&quot;, &quot;assets/img/portraits/leibniz.jpg&quot;, &quot;assets/img/portraits/jbernoulli.jpg&quot;, &quot;assets/img/portraits/johbernoulli.jpg&quot;, &quot;assets/img/portraits/euler.jpg&quot;, &quot;assets/img/portraits/lagrange.jpg&quot;, &quot;assets/img/portraits/fourier.jpg&quot;, &quot;assets/img/portraits/poisson.jpg&quot;, &quot;assets/img/portraits/gauss.jpg&quot;, &quot;assets/img/portraits/dirichlet.jpg&quot;, &quot;assets/img/portraits/plucker.jpg&quot;, &quot;assets/img/portraits/lipschitz.jpg&quot;, &quot;assets/img/portraits/klein.jpg&quot;, &quot;assets/img/portraits/lindemann.jpg&quot;, &quot;assets/img/portraits/sommerfeld.jpg&quot;]" data-blur="2" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 class="reveal">Akademik soy ağacı</h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <div class="gen-bar reveal">
+      <p class="gen-readout" data-gen-readout aria-live="polite"></p>
+    </div>
+    <div class="gen-scroll reveal">
+      <svg data-gen role="img" aria-label="Ali Emre Pusane'nin akademik soy ağacı"></svg>
+    </div>
+    <p class="muted mono mt-s" style="font-size:12px">Yıllar, tezlerin tamamlandığı yıllardır. Kaynak: <a href="https://www.mathgenealogy.org" rel="noopener">Mathematics Genealogy Project</a>. Portreler: Wikimedia Commons (kamu malı). Dar ekranlarda yatay kaydırabilirsiniz.</p>
+  </div>
+</section>
+
+<style>
+  .gen-bar:has(.gen-readout:empty) { display: none; }
+  .gen-bar { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 16px 0; position: sticky; top: 64px; background: var(--paper); z-index: 5; }
+  .gen-readout { font: 400 clamp(18px, 1.8vw, 22px)/1.35 var(--serif); margin: 0; max-width: 60ch; }
+  .gen-readout b { color: var(--accent); font-weight: 500; }
+  .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 24px; }
+  .gen-scroll svg { display: block; width: 100%; min-width: 900px; height: auto; }
+  .g-node { cursor: pointer; }
+  .g-node .nm { font: 450 14.5px var(--serif); fill: var(--ink); text-anchor: middle; }
+  .g-node .in { font: 400 10.5px var(--sans); fill: var(--muted); text-anchor: middle; }
+  .g-node .hit { fill: transparent; }
+  .g-node:hover .nm { fill: var(--accent); }
+  .g-node .dot { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.2; }
+  .g-edge { fill: none; stroke: var(--muted); stroke-opacity: .7; stroke-width: 2.2; transition: stroke .3s, opacity .3s; }
+  .g-me .nm { fill: var(--accent); font-weight: 500; font-size: 20px; }
+  .g-me .in { font-size: 11.5px; }
+  .g-me .dot { fill: var(--accent); stroke: var(--accent); }
+  .g-kid .nm { font-size: 13.5px; }
+  .g-kid .in { font-family: var(--mono); }
+  svg.sel .g-node { opacity: .28; transition: opacity .3s; }
+  svg.sel .g-edge { opacity: .3; }
+  svg.sel .on { opacity: 1; }
+  svg.sel .g-edge.on { stroke: var(--accent); stroke-opacity: 1; stroke-width: 3.2; }
+  svg.sel .g-node.root .dot { fill: var(--accent); stroke: var(--accent); }
+</style>

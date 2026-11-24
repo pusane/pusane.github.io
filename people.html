@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People — Ali Emre Pusane</title>
+<meta name="description" content="Current PhD and MSc students supervised by Ali Emre Pusane, and where alumni went after graduating.">
+<meta property="og:title" content="People — Ali Emre Pusane">
+<meta property="og:description" content="Current PhD and MSc students supervised by Ali Emre Pusane, and where alumni went after graduating.">
+<meta property="og:image" content="assets/img/portrait.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="alternate" hreflang="en" href="people.html">
+<link rel="alternate" hreflang="tr" href="tr/people.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/skin-swiss.css">
+<script>window.BASE='';try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>Ali Emre Pusane</b><span>BOĞAZİÇİ · EE</span></a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="people.html" aria-current="page">People</a>
+        <a href="genealogy.html">Genealogy</a>
+        <a href="life.html">Personal</a>
+      </nav>
+      <a class="icon-btn lang-btn" href="tr/people.html" hreflang="tr" lang="tr" title="Türkçe" aria-label="Türkçe">TR</a>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg></button>
+      <button class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 5h12M2 11h12"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero has-bg">
+  <div class="hero-bg" data-portraits data-silhouettes="14" data-blur="12" aria-hidden="true"><canvas></canvas></div>
+  <div class="wrap">
+    <h1 class="reveal">Students</h1>
+    <p class="lede reveal">I work with students through the <a href="research.html#busarg">Boğaziçi University Signal Analysis Research Group (BUSARG)</a>. Prospective students are welcome to <a data-email data-keep-text="1" href="#">get in touch</a>.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <div class="people-cols">
+      <div class="reveal"><h3>PhD students</h3><ul class="names" data-list="phd"></ul></div>
+      <div class="reveal"><h3>MSc students</h3><ul class="names" data-list="msc"></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="reveal">Supervised theses</h2>
+    </div>
+    <div class="thesis-filter chips reveal mt-m" data-tfilter>
+      <button class="chip" aria-pressed="true" data-d="">All</button>
+      <button class="chip" aria-pressed="false" data-d="PhD">PhD</button>
+      <button class="chip" aria-pressed="false" data-d="MSc">MSc</button>
+    </div>
+    <div class="alumni reveal mt-s" data-alumni></div>
+    <p class="muted mono reveal mt-s" style="font-size:12px">Source: <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/" rel="noopener">YÖK National Thesis Center</a>. Years are thesis years as recorded there.</p>
+  </div>
+</section>
+
+<style>
+  .people-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(20px, 3vw, 48px); border-top: 1px solid var(--ink); padding-top: 22px; }
+  .people-cols h3 { font-size: 22px; margin-bottom: 14px; }
+  @media (max-width: 760px) { .people-cols { grid-template-columns: 1fr; } }
+  .names { list-style: none; margin: 0; padding: 0; }
+  .names li { padding: 10px 0; border-bottom: 1px solid var(--rule-soft); font-size: 16px; }
+  .names .tt { display: block; font: italic 300 15px/1.35 var(--serif); color: var(--ink-2); margin-top: 3px; }
+  .names .co { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .names a, .alum .n a { text-decoration: none; }
+  .li-ico { display: inline-block; width: 13px; height: 13px; margin-left: 7px; vertical-align: -1px; color: var(--muted); transition: color .2s; }
+  a:hover .li-ico { color: var(--cool); }
+
+  .dest { display: flex; flex-wrap: wrap; gap: 10px; }
+  .dest span { font: 400 clamp(17px, 1.7vw, 20px)/1 var(--serif); padding: 10px 16px; border: 1px solid var(--rule); border-radius: 999px; background: var(--card); }
+  .dest span small { font: 400 10.5px/1 var(--mono); color: var(--muted); margin-left: 8px; letter-spacing: .06em; text-transform: uppercase; }
+  .dest span.ac { border-color: var(--cool); }
+
+  .alumni { border-top: 1px solid var(--ink); }
+  .alum { display: grid; grid-template-columns: 56px 52px minmax(0, 2.2fr) minmax(0, 1fr); gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .alum .tt { display: block; font: italic 300 16px/1.35 var(--serif); color: var(--ink-2); margin-top: 4px; }
+  .alum .co { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .alum .y, .alum .d { font: 400 12.5px/1.4 var(--mono); color: var(--muted); }
+  .alum .n { font: 400 19px/1.3 var(--serif); }
+  .alum .n a { text-decoration: none; }
+  .alum .w { font-size: 15px; color: var(--ink-2); }
+  .alum .w small { color: var(--muted); display: block; font-size: 13px; }
+  @media (max-width: 700px) { .alum { grid-template-columns: 52px 1fr; gap: 4px 14px; } .alum .d { grid-row: 2; } .alum .w { grid-column: 2; } }
+  .alum .w.unk { color: var(--muted); }
+
+</style>
+<script>
+  (function () {
+    var L = 'https://www.linkedin.com/in/';
+    var current = {
+      // [name, LinkedIn slug, thesis topic, note]
+      phd: [
+        ['Uzay Bengi', 'uzaybengi/'],
+        ['Burak Ahmet Çelebi', 'burak-ahmet-celebi/'],
+        ['Erhan Karakoca', 'erhankarakoca/'],
+        ['Samed Keşir', 'samed-keşir-57b510152/'],
+        ['Sema Saraç', 'sema-sarac-69b18637/', 'Reverse engineering error control codes using deep learning', 'Aalto University · co-advised with Olav Tirkkonen'],
+        ['Erkin Yapıcı', 'erkinyapici/'],
+        ['Ramazan Yılmaz', 'ramazan-yılmaz-557263251/', 'Semantic and task-aware communications']
+      ],
+      msc: [
+        ['Berkay Arslan', 'berkay-arslan-b123271b5/', 'High-Doppler frequency compensation for OFDM systems via channel estimation'],
+        ['Arda Bulut', 'ardabulut/', '', 'co-advised with Bora Akgün'],
+        ['Hasan Emre Kayır', '', 'Health state estimation and prognostic analysis for predictive maintenance of aerospace systems'],
+        ['Hakan Hamza Uğur', 'hakanhamzauğur/']
+      ]
+    };
+    // Name with link; LinkedIn links get a small icon.
+    var LI = '<svg class="li-ico" viewBox="0 0 16 16" aria-hidden="true"><rect width="16" height="16" rx="3" fill="currentColor"/><path fill="var(--paper)" d="M4.1 6.3H6v5.9H4.1zM5.05 3.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM7.3 6.3h1.8v.8c.3-.5 1-1 2-1 2 0 2.4 1.3 2.4 3v3.1h-1.9V9.5c0-.7 0-1.6-1-1.6s-1.2.8-1.2 1.6v2.7H7.3z"/></svg><span class="sr-only"> (LinkedIn)</span>';
+    function person(name, url) {
+      if (!url) return name;
+      return '<a href="' + url + '" rel="noopener">' + name + (url.indexOf('linkedin.com') > -1 ? LI : '') + '</a>';
+    }
+    Object.keys(current).forEach(function (k) {
+      if (!current[k].length) { document.querySelector('[data-list="' + k + '"]').parentElement.remove(); return; }
+      document.querySelector('[data-list="' + k + '"]').innerHTML = current[k].map(function (p) {
+        return '<li>' + person(p[0], p[1] && L + p[1]) + (p[2] ? '<span class="tt">' + p[2] + '</span>' : '') + (p[3] ? '<span class="co">' + p[3] + '</span>' : '') + '</li>';
+      }).join('');
+    });
+
+    // Graduate theses (source: YÖK Ulusal Tez Merkezi, advisor search, Nov 2026).
+    // [year, degree, name, link, thesis title, co-advisors / host, first position, organisation, kind]
+    //   kind: i = industry, a = academia, c = continued to PhD with me, '' = not filled in yet
+    var A = [
+      [2026, 'PhD', 'Muhammet Yaser Yağan', L + 'mhyasery/', 'Advanced beamforming techniques for 6G communications', 'co-advised with İbrahim Hökelek', 'Senior R&D Engineer', 'TÜBİTAK BİLGEM', 'i'],
+      [2026, 'MSc', 'Muhammed Çelik', L + 'celikmuhammed/', 'FPGA-based post-quantum cryptographic solution as a drop-in replacement for HSMs in financial systems', 'co-advised with Sıddıka Berna Örs Yalçın', 'Digital Design Engineer', 'Analog Devices', 'i'],
+      [2025, 'MSc', 'Burak Önal', L + 'burakonal/', 'A machine learning approach to station identification in a Wi-Fi network', '', 'Data Science Tech Lead', 'Trendyol', 'i'],
+      [2023, 'PhD', 'Mehmet Özgün Demir', L + 'özgün-demir-38b811111/', 'Detection and mitigation techniques against eavesdropping and spoofing in GPS', 'co-advised with Güneş Zeynep Karabulut Kurt', 'Research Engineer', 'Lifemote Networks', 'i'],
+      [2023, 'PhD', 'Massoud Pourmandi', L + 'massoud-pourmandi-42aba759/', 'LDPC code design for distributed storage systems', 'co-advised with Şefik Şuayb Arslan', 'Post-doc', 'Boğaziçi University AI Institute', 'a'],
+      [2023, 'MSc', 'Gökhan Tosun', L + 'gokhanntosun/', 'Deep learning based automatic modulation classification for sub-carriers of OFDM signals', '', 'Quantitative Analyst', 'Morphy Capital', 'i'],
+      [2023, 'MSc', 'Tuğrul Can Erk', L + 'tugrul-can-erk/', 'Inter-numerology interference minimization in 5G: A deep reinforcement learning based approach', '', 'Autonomous Driving Software Engineer', 'Ford Otosan', 'i'],
+      [2023, 'MSc', 'Samed Keşir', L + 'samed-keşir-57b510152/', 'Coverage optimization for 6G using reconfigurable intelligent surfaces', '', 'Researcher', 'TÜBİTAK BİLGEM', 'i'],
+      [2022, 'MSc', 'Gökberk Yaylalı', L + 'gokberkyaylali/', 'Design, analysis, and channel modeling of molecular multiple receiver communication systems', '', 'PhD student', 'Yale University', 'a'],
+      [2022, 'MSc', 'Ezgi Oral', L + 'ezgi-oral-b8227412a/', 'Reduced-complexity reinforcement learning-based polar code construction', 'co-advised with İbrahim Altunbaş', 'R&D Engineer', 'ENOVAS Engineering & Defense Technologies', 'i'],
+      [2022, 'MSc', 'Ramazan Yılmaz', L + 'ramazan-yılmaz-557263251/', 'Deep learning based automatic modulation classification in the presence of carrier phase offset and carrier frequency offset', '', 'Continued to PhD', '', 'c'],
+      [2022, 'MSc', 'Barış Bilgili', L + 'barisbilgili/', 'FPGA üzerinde 5G uyumlu düşük yoğunluklu eşlik denetim kod çözücü gerçeklenmesi', 'Istanbul Technical University · co-advised with Sıddıka Berna Örs Yalçın', 'R&D Engineer', 'Yongatek Microelectronics', 'i'],
+      [2022, 'MSc', 'Oğuzhan Aydoğan', L + 'oğuzhan-aydoğan-a566a6293/', 'Kutupsal kodlar ve uydu iletişimindeki başarımı', 'Istanbul Technical University · co-advised with İbrahim Altunbaş', 'R&D Engineer', 'ENOVAS Engineering & Defense Technologies', 'i'],
+      [2022, 'MSc', 'Joana Angjo', L + 'joanaangjo/', 'Molecular communications: Novel relaying schemes and molecular beamforming', 'Koç University · co-advised with Ertuğrul Başar', 'PhD student', 'TU Berlin', 'a'],
+      [2021, 'MSc', 'Muhammet Yaser Yağan', L + 'mhyasery/', 'Performance improvement approaches for visible light communication', '', 'Continued to PhD', '', 'c'],
+      [2020, 'PhD', 'Abdullah Sarıduman', L + 'abdullah-sariduman-phd-5688141b/', 'Improving the error floor performance of LDPC codes', 'co-advised with Z. Caner Taşkın', 'Specialist SoC/IP', 'Nokia, Finland', 'i'],
+      [2020, 'PhD', 'Görkem Ülkar', L + 'gorkemulkar/', 'Practical channel coding methods for channels with input-dependent noise', '', 'Senior MTS', 'Maxim Integrated', 'i'],
+      [2019, 'PhD', 'Yağmur Sabucu Sandal', L + 'yağmur-sabucu-sandal-7a719851/', 'Stable-matching based resource allocation methods in wireless communication systems', 'co-advised with Güneş Zeynep Karabulut Kurt', 'R&D Engineer', 'Siemens', 'i'],
+      [2019, 'MSc', 'Oğuz Kışlal', L + 'ahmet-oğuz-kışlal-49356510b/', 'Novel error-control coding techniques for molecular communication', '', 'PhD student', 'Chalmers University of Technology', 'a'],
+      [2018, 'PhD', 'Bayram Cevdet Akdeniz', 'https://scholar.google.com/citations?user=JA1MhPYAAAAJ', 'Molecular communication in diffusion based channel', '', 'Post-doc', 'INSA Lyon', 'a'],
+      [2018, 'PhD', 'Reza Ashrafi', L + 'reza-a-ashrafi-phd-82692178/', 'Error mitigation in next generation NAND flash memories', '', 'Post-doc', 'Aalto University', 'a'],
+      [2017, 'MSc', 'Mustafa Can Gürsoy', L + 'mustafa-can-gürsoy-57b68577/', 'Multiple user and channel interference reduction methods for molecular communication via diffusion systems', '', 'PhD student', 'University of Southern California', 'a'],
+      [2015, 'MSc', 'Burcu Tepekule', L + 'burcutepekule/', 'ISI mitigation techniques in molecular communication', '', 'PhD student', 'ETH Zürich', 'a'],
+      [2014, 'PhD', 'Giray Kömürcü', L + 'giray-kömürcü-phd-376287b/', 'Realization and analysis of high performance physical unclonable functions based on ring oscillators', 'co-advised with Günhan Dündar', 'Chief Design Engineer', 'TÜBİTAK', 'i'],
+      [2014, 'PhD', 'Ülkühan Güler', L + 'ulkuhan-guler-05b644a/', 'Ring oscillator based random number generators', 'co-advised with Günhan Dündar', 'Post-doc', 'Georgia Institute of Technology', 'a'],
+      [2013, 'MSc', 'Abdullah Sarıduman', L + 'abdullah-sariduman-phd-5688141b/', 'Integer programming based analysis of decoding failures for LDPC codes', 'co-advised with Z. Caner Taşkın', 'Continued to PhD', '', 'c'],
+      [2012, 'MSc', 'Berksan Şerbetçi', L + 'berksan-serbetci-a31a1795/', 'Generator matrix selection for finite-length polar codes', '', 'PhD student', 'University of Twente', 'a'],
+      [2012, 'MSc', 'Reza Ashrafi', L + 'reza-a-ashrafi-phd-82692178/', 'Spatially-coupled LDPC coding for the correlated erasure channel', '', 'Continued to PhD', '', 'c']
+    ];
+    function renderTheses(deg) {
+      document.querySelector('[data-alumni]').innerHTML = A.filter(function (a) { return !deg || a[1] === deg; }).map(function (a) {
+        var where = a[8] === 'c' ? 'Continued to PhD' : a[6] ? a[6] + ', ' + a[7] : '';
+        return '<div class="alum"><span class="y">' + a[0] + '</span><span class="d">' + a[1] + '</span><span class="n">' + person(a[2], a[3]) +
+          '<span class="tt">' + a[4] + '</span>' + (a[5] ? '<span class="co">' + a[5] + '</span>' : '') + '</span><span class="w' + (where ? '' : ' unk') + '">' + (where || '—') + '</span></div>';
+      }).join('');
+    }
+    renderTheses('');
+    document.querySelector('[data-tfilter]').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-d]'); if (!b) return;
+      this.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', c === b); });
+      renderTheses(b.dataset.d);
+    });
+
+  })();
+</script>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-big">Questions about research, theses, or courses? Write to me.</p>
+        <a class="btn" data-email data-keep-text="1" href="#">Send an e-mail <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+        <p class="muted mt-s" style="font-size:14px">Department of Electrical &amp; Electronics Engineering<br>Boğaziçi University, Bebek 34342 İstanbul</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="genealogy.html">Genealogy</a></li>
+          <li><a href="life.html">Personal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=kb9sJBYAAAAJ" rel="noopener">Google Scholar</a></li>
+          <li><a href="assets/cv-pusane.pdf">Curriculum vitae (PDF)</a></li>
+          <li><a href="https://ee.bogazici.edu.tr" rel="noopener">EE @ Boğaziçi</a></li>
+          <li><a data-email href="#">ali.pusane [at] bogazici.edu.tr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base"><span>© <span data-year>2026</span> Ali Emre Pusane</span></div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/portraits.js"></script>
+</body>
+</html>

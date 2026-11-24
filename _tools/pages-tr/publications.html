@@ -1,0 +1,65 @@
+Yayınlar — Ali Emre Pusane|Ali Emre Pusane'nin dergi makaleleri ve konferans bildirileri; yıla, yayın türüne ve konuya göre aranabilir ve filtrelenebilir.|publications|assets/data/publications.js,assets/js/publications.js,assets/js/eye.js
+<section class="page-hero has-bg">
+  <div class="hero-bg" data-eye aria-hidden="true"><canvas></canvas></div>
+  <div class="wrap">
+    <h1 class="reveal">Dergi ve konferans makaleleri</h1>
+    <p class="lede reveal" data-pub-lede>Dergi makaleleri ve konferans bildirileri, en yeniden eskiye doğru sıralı. Listeyi daraltmak için grafikte bir yıla tıklayabilirsiniz; güncel kayıt <a href="https://scholar.google.com/citations?user=kb9sJBYAAAAJ" rel="noopener">Google Scholar</a> profilimde de yer alıyor.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <figure class="pub-chart reveal" aria-label="Yıllara göre yayın sayısı, yayın türüne göre yığılmış">
+      <svg data-pub-chart role="img" preserveAspectRatio="none"></svg>
+      <div class="pub-tip" data-pub-tip hidden></div>
+      <figcaption class="pub-legend">
+        <span><i style="background:var(--ink)"></i>Dergi</span>
+        <span><i style="background:var(--cool)"></i>Uluslararası konferans</span>
+        <span><i style="background:var(--muted);opacity:.45"></i>Ulusal konferans</span>
+      </figcaption>
+    </figure>
+
+    <div class="pub-controls reveal">
+      <input class="search" type="search" placeholder="Başlık, ortak yazar veya yayın yeri arayın…" aria-label="Yayınlarda ara" data-pub-search>
+      <div class="chips" data-pub-kinds></div>
+      <div class="chips" data-pub-topics></div>
+    </div>
+    <p class="pub-count mono" data-pub-count aria-live="polite"></p>
+    <div data-pub-list></div>
+  </div>
+</section>
+
+<style>
+
+  .pub-chart { position: relative; margin: 48px 0 0; }
+  .pub-chart svg { width: 100%; height: 220px; display: block; overflow: visible; }
+  .pub-chart .bar { cursor: pointer; }
+  .pub-chart .bar rect { transition: opacity .2s; }
+  .pub-chart.has-sel .bar:not(.sel) rect { opacity: .22; }
+  .pub-chart .bar:hover rect { opacity: 1 !important; }
+  .pub-chart .ax { font: 400 10px var(--mono); fill: var(--muted); }
+  .pub-tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font: 400 12px/1.5 var(--mono); padding: 8px 10px; border-radius: 3px; transform: translate(-50%, -100%); white-space: nowrap; }
+  .pub-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; font: 400 12px/1 var(--mono); color: var(--muted); }
+  .pub-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 8px; vertical-align: -1px; }
+
+  .pub-controls { margin-top: 56px; display: grid; gap: 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pub-count { font-size: 12px; color: var(--muted); margin: 28px 0 0; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .pub-count button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  .pub-year { display: grid; grid-template-columns: 110px 1fr; gap: 24px; border-top: 1px solid var(--ink); padding-top: 18px; margin-top: 40px; }
+  .pub-year > h3 { font: 300 40px/1 var(--serif); letter-spacing: -.03em; position: sticky; top: 84px; align-self: start; }
+  .pub-year > h3 small { display: block; font: 400 11px/1.4 var(--mono); color: var(--muted); letter-spacing: 0; margin-top: 8px; }
+  @media (max-width: 700px) { .pub-year { grid-template-columns: 1fr; gap: 8px; } .pub-year > h3 { position: static; font-size: 32px; } }
+  .pub { padding: 0 0 22px; margin-bottom: 22px; border-bottom: 1px solid var(--rule-soft); }
+  .pub:last-child { border-bottom: 0; margin-bottom: 0; }
+  .pub .t { font: 400 20px/1.3 var(--serif); letter-spacing: -.005em; margin: 0 0 6px; }
+  .pub .a { font-size: 14.5px; color: var(--ink-2); margin: 0 0 2px; }
+  .pub .a b { font-weight: 600; color: var(--ink); }
+  .pub .v { font-size: 14.5px; color: var(--muted); font-style: italic; margin: 0; }
+  .pub .m { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 10px; font: 400 12px/1 var(--mono); }
+  .pub .m a, .pub .m button { color: var(--muted); text-decoration: none; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+  .pub .m a:hover, .pub .m button:hover { color: var(--accent); }
+  .pub mark { background: var(--accent-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+  .empty { padding: 48px 0; text-align: center; color: var(--muted); }
+</style>

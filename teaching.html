@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching — Ali Emre Pusane</title>
+<meta name="description" content="Courses taught by Ali Emre Pusane at Boğaziçi University and the University of Notre Dame, with unfiltered student evaluations.">
+<meta property="og:title" content="Teaching — Ali Emre Pusane">
+<meta property="og:description" content="Courses taught by Ali Emre Pusane at Boğaziçi University and the University of Notre Dame, with unfiltered student evaluations.">
+<meta property="og:image" content="assets/img/portrait.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="alternate" hreflang="en" href="teaching.html">
+<link rel="alternate" hreflang="tr" href="tr/teaching.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/skin-swiss.css">
+<script>window.BASE='';try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>Ali Emre Pusane</b><span>BOĞAZİÇİ · EE</span></a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html" aria-current="page">Teaching</a>
+        <a href="people.html">People</a>
+        <a href="genealogy.html">Genealogy</a>
+        <a href="life.html">Personal</a>
+      </nav>
+      <a class="icon-btn lang-btn" href="tr/teaching.html" hreflang="tr" lang="tr" title="Türkçe" aria-label="Türkçe">TR</a>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg></button>
+      <button class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 5h12M2 11h12"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero has-bg">
+  <div class="hero-bg" data-eqs aria-hidden="true"><canvas></canvas></div>
+  <div class="wrap">
+    <h1 class="reveal">Teaching</h1>
+    <p class="lede reveal">I enjoy the teaching side of my work, particularly crowded sophomore- and junior-level courses. Below are the courses I have taught at Boğaziçi University and the University of Notre Dame. Student evaluations are provided for most of them.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <div class="courses reveal" data-courses></div>
+    <p class="muted mono reveal mt-s" style="font-size:12px">Evaluations are screenshots of the university's anonymous end-of-term surveys.</p>
+    <p class="muted reveal mt-m" style="font-size:14.5px">Excellence in Teaching Award, School of Engineering, Boğaziçi University: 2010–2015, 2019, 2021–2025.</p>
+  </div>
+</section>
+
+<dialog class="viewer" data-viewer aria-labelledby="viewer-title">
+  <div class="viewer-inner">
+    <div class="viewer-head"><h3 id="viewer-title"></h3><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 3 10 10M13 3 3 13"/></svg></button></div>
+    <div class="viewer-tabs" data-tabs></div>
+    <div class="viewer-body" data-body></div>
+  </div>
+</dialog>
+
+<style>
+  .chip.eval { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); font-weight: 500; padding: 9px 14px; }
+  .chip.eval:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip.eval .n { opacity: .75; }
+  .courses { border-top: 1px solid var(--ink); }
+  .course { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .course .code { font: 400 14px/1.2 var(--mono); color: var(--muted); }
+  .course .name { font: 400 clamp(20px, 2vw, 24px)/1.25 var(--serif); }
+  .course .name .pill { margin-left: 10px; vertical-align: 3px; }
+  .course .act { display: flex; gap: 10px; align-items: center; }
+  .course-group { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 32px 0 12px; border-bottom: 1px solid var(--rule); }
+  .course-group:first-child { padding-top: 18px; }
+  .terms { display: flex; gap: 3px; align-items: flex-end; height: 20px; }
+  .terms i { width: 4px; background: var(--cool); border-radius: 1px; opacity: .7; }
+  @media (max-width: 640px) {
+    .course { grid-template-columns: 1fr; gap: 6px; }
+    .course .act { margin-top: 8px; }
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var C = [
+      ['Boğaziçi University'],
+      ['EE 201', 'Electrical Circuits I', '', 'EE 201'],
+      ['EE 210', 'Introduction to Electrical Engineering', '', 'EE 210'],
+      ['EE 214', 'Probability for Electrical Engineering', 'recent', 'EE 214'],
+      ['EE 241', 'Computer Tools for EE', '', 'EE 241'],
+      ['EE 242', 'Numerical Methods for EE', '', 'EE 242'],
+      ['EE 271', 'Signals and Systems I', '', 'EE 271'],
+      ['EE 371/374', 'Communication Engineering', 'recent', 'EE 371/374'],
+      ['EE 372', 'Random Signals', '', 'EE 372'],
+      ['EE 477', 'Digital Communications', '', 'EE 477'],
+      ['EE 479', 'Communications Laboratory', '', 'EE 479'],
+      ['EE 481', 'Sp. Tp. Introduction to Radar Signal Processing', 'Fall 2026', ''],
+      ['EE 572', 'Mathematical Methods for Signal Processing', 'recent', 'EE 572'],
+      ['EE 644', 'Error Control Coding', '', 'EE 644'],
+      ['University of Notre Dame'],
+      ['EE 553', 'Advanced Digital Communications', '', ''],
+      ['EE 654', 'Coding Theory', '', '']
+    ];
+    var FB = window.FEEDBACK || {}, h = '';
+    C.forEach(function (c) {
+      if (c.length === 1) { h += '<div class="course-group">' + c[0] + '</div>'; return; }
+      var fb = FB[c[3]], pill = c[2] ? '<span class="pill ' + (c[2] === 'recent' ? 'cool' : 'accent') + '">' + (c[2] === 'recent' ? 'recent' : 'new · ' + c[2]) + '</span>' : '';
+      var act = '';
+      if (fb) {
+        var bars = fb.slice().reverse().map(function (t) { return '<i style="height:' + (6 + 4 * t.imgs.length) + 'px" title="' + t.term + '"></i>'; }).join('');
+        act = '<span class="terms" aria-hidden="true">' + bars + '</span><button class="chip eval" data-open="' + c[3] + '">Evaluations <span class="n">' + fb.length + '</span></button>';
+      }
+      h += '<div class="course"><span class="code">' + c[0] + '</span><span class="name">' + c[1] + pill + '</span><span class="act">' + act + '</span></div>';
+    });
+    document.querySelector('[data-courses]').innerHTML = h;
+
+
+    // viewer
+    var dlg = document.querySelector('[data-viewer]'), tabs = dlg.querySelector('[data-tabs]'), body = dlg.querySelector('[data-body]');
+    function show(course, idx) {
+      var terms = FB[course];
+      tabs.innerHTML = terms.map(function (t, i) { return '<button class="chip" aria-pressed="' + (i === idx) + '" data-t="' + i + '">' + (t.term || 'Term ' + (i + 1)) + '</button>'; }).join('');
+      body.innerHTML = terms[idx].imgs.map(function (src) { return '<img src="' + (window.BASE || '') + src + '" alt="Student evaluation, ' + course + ', ' + terms[idx].term + '" loading="lazy">'; }).join('');
+      body.scrollTop = 0;
+      tabs.onclick = function (e) { var b = e.target.closest('[data-t]'); if (b) show(course, +b.dataset.t); };
+    }
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-open]');
+      if (b) { dlg.querySelector('#viewer-title').textContent = b.dataset.open + ' — student evaluations'; show(b.dataset.open, 0); dlg.showModal(); }
+    });
+    dlg.querySelector('[data-close]').onclick = function () { dlg.close(); };
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  });
+</script>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-big">Questions about research, theses, or courses? Write to me.</p>
+        <a class="btn" data-email data-keep-text="1" href="#">Send an e-mail <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+        <p class="muted mt-s" style="font-size:14px">Department of Electrical &amp; Electronics Engineering<br>Boğaziçi University, Bebek 34342 İstanbul</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="genealogy.html">Genealogy</a></li>
+          <li><a href="life.html">Personal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=kb9sJBYAAAAJ" rel="noopener">Google Scholar</a></li>
+          <li><a href="assets/cv-pusane.pdf">Curriculum vitae (PDF)</a></li>
+          <li><a href="https://ee.bogazici.edu.tr" rel="noopener">EE @ Boğaziçi</a></li>
+          <li><a data-email href="#">ali.pusane [at] bogazici.edu.tr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base"><span>© <span data-year>2026</span> Ali Emre Pusane</span></div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/data/feedback.js"></script>
+<script src="assets/js/equations.js"></script>
+</body>
+</html>
