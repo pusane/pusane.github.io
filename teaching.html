@@ -99,11 +99,11 @@
       ['EE 241', 'Computer Tools for EE', '', 'EE 241'],
       ['EE 242', 'Numerical Methods for EE', '', 'EE 242'],
       ['EE 271', 'Signals and Systems I', '', 'EE 271'],
-      ['EE 371/374', 'Communication Engineering', 'recent', 'EE 371/374'],
+      ['EE 371', 'Communication Engineering', 'Fall 2026', 'EE 371'],
       ['EE 372', 'Random Signals', '', 'EE 372'],
       ['EE 477', 'Digital Communications', '', 'EE 477'],
       ['EE 479', 'Communications Laboratory', '', 'EE 479'],
-      ['EE 481', 'Sp. Tp. Introduction to Radar Signal Processing', 'Fall 2026', ''],
+      ['EE 481', 'Sp. Tp. Introduction to Radar Signal Processing', 'Fall 2026', '', 'new'],
       ['EE 572', 'Mathematical Methods for Signal Processing', 'recent', 'EE 572'],
       ['EE 644', 'Error Control Coding', '', 'EE 644'],
       ['University of Notre Dame'],
@@ -113,7 +113,7 @@
     var FB = window.FEEDBACK || {}, h = '';
     C.forEach(function (c) {
       if (c.length === 1) { h += '<div class="course-group">' + c[0] + '</div>'; return; }
-      var fb = FB[c[3]], pill = c[2] ? '<span class="pill ' + (c[2] === 'recent' ? 'cool' : 'accent') + '">' + (c[2] === 'recent' ? 'recent' : 'new · ' + c[2]) + '</span>' : '';
+      var fb = FB[c[3]], pill = c[2] ? '<span class="pill ' + (c[2] === 'recent' ? 'cool' : 'accent') + '">' + (c[2] === 'recent' ? 'recent' : (c[4] === 'new' ? 'new · ' : '') + c[2]) + '</span>' : '';
       var act = '';
       if (fb) {
         var bars = fb.slice().reverse().map(function (t) { return '<i style="height:' + (6 + 4 * t.imgs.length) + 'px" title="' + t.term + '"></i>'; }).join('');

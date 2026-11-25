@@ -106,6 +106,9 @@
   .alum .w small { color: var(--muted); display: block; font-size: 13px; }
   @media (max-width: 700px) { .alum { grid-template-columns: 52px 1fr; gap: 4px 14px; } .alum .d { grid-row: 2; } .alum .w { grid-column: 2; } }
   .alum .w.unk { color: var(--muted); }
+  .alum-head { padding: 10px 0; }
+  .alum-head span { font: 400 11.5px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  @media (max-width: 700px) { .alum-head { display: none; } .alum .w[data-l]::before { content: attr(data-l); display: block; font: 400 11px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-top: 6px; } }
 
 </style>
 <script>
@@ -176,10 +179,10 @@
       [2012, 'MSc', 'Reza Ashrafi', L + 'reza-a-ashrafi-phd-82692178/', 'Spatially-coupled LDPC coding for the correlated erasure channel', '', 'Continued to PhD', '', 'c']
     ];
     function renderTheses(deg) {
-      document.querySelector('[data-alumni]').innerHTML = A.filter(function (a) { return !deg || a[1] === deg; }).map(function (a) {
+      document.querySelector('[data-alumni]').innerHTML = '<div class="alum alum-head" aria-hidden="true"><span>Year</span><span>Degree</span><span>Student and thesis</span><span>First position after graduation</span></div>' + A.filter(function (a) { return !deg || a[1] === deg; }).map(function (a) {
         var where = a[8] === 'c' ? 'Continued to PhD' : a[6] ? a[6] + ', ' + a[7] : '';
         return '<div class="alum"><span class="y">' + a[0] + '</span><span class="d">' + a[1] + '</span><span class="n">' + person(a[2], a[3]) +
-          '<span class="tt">' + a[4] + '</span>' + (a[5] ? '<span class="co">' + a[5] + '</span>' : '') + '</span><span class="w' + (where ? '' : ' unk') + '">' + (where || '—') + '</span></div>';
+          '<span class="tt">' + a[4] + '</span>' + (a[5] ? '<span class="co">' + a[5] + '</span>' : '') + '</span><span class="w' + (where ? '' : ' unk') + '" data-l="First position after graduation">' + (where || '—') + '</span></div>';
       }).join('');
     }
     renderTheses('');

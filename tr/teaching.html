@@ -99,11 +99,11 @@
       ['EE 241', 'EE için Bilgisayar Araçları', '', 'EE 241'],
       ['EE 242', 'EE için Sayısal Yöntemler', '', 'EE 242'],
       ['EE 271', 'Sinyaller ve Sistemler I', '', 'EE 271'],
-      ['EE 371/374', 'Haberleşme Mühendisliği', 'recent', 'EE 371/374'],
+      ['EE 371', 'Haberleşme Mühendisliği', 'Fall 2026', 'EE 371'],
       ['EE 372', 'Rastgele Sinyaller', '', 'EE 372'],
       ['EE 477', 'Sayısal Haberleşme', '', 'EE 477'],
       ['EE 479', 'Haberleşme Laboratuvarı', '', 'EE 479'],
-      ['EE 481', 'Özel Konular: Radar Sinyal İşlemeye Giriş', 'Fall 2026', ''],
+      ['EE 481', 'Özel Konular: Radar Sinyal İşlemeye Giriş', 'Fall 2026', '', 'new'],
       ['EE 572', 'Sinyal İşleme için Matematiksel Yöntemler', 'recent', 'EE 572'],
       ['EE 644', 'Hata Denetim Kodlaması', '', 'EE 644'],
       ['University of Notre Dame'],
@@ -114,7 +114,7 @@
     function trm(t) { return String(t || '').replace(/^Fall\b/, 'Güz').replace(/^Spring\b/, 'Bahar').replace(/^Summer\b/, 'Yaz'); }
     C.forEach(function (c) {
       if (c.length === 1) { h += '<div class="course-group">' + c[0] + '</div>'; return; }
-      var fb = FB[c[3]], pill = c[2] ? '<span class="pill ' + (c[2] === 'recent' ? 'cool' : 'accent') + '">' + (c[2] === 'recent' ? 'son dönem' : 'yeni · ' + trm(c[2])) + '</span>' : '';
+      var fb = FB[c[3]], pill = c[2] ? '<span class="pill ' + (c[2] === 'recent' ? 'cool' : 'accent') + '">' + (c[2] === 'recent' ? 'son dönem' : (c[4] === 'new' ? 'yeni · ' : '') + trm(c[2])) + '</span>' : '';
       var act = '';
       if (fb) {
         var bars = fb.slice().reverse().map(function (t) { return '<i style="height:' + (6 + 4 * t.imgs.length) + 'px" title="' + trm(t.term) + '"></i>'; }).join('');

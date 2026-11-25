@@ -150,7 +150,7 @@ window.FEEDBACK = {
    ]
   }
  ],
- "EE 371/374": [
+ "EE 371": [
   {
    "term": "Fall 2024",
    "imgs": [
