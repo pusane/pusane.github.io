@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pusane.net/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/research.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/research.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/research.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/research.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/publications.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/publications.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/teaching.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/teaching.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/teaching.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/teaching.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/teaching.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/teaching.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/teaching.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/teaching.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/people.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/people.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/people.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/people.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/people.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/people.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/people.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/people.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/genealogy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/genealogy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/genealogy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/genealogy.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/genealogy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/genealogy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/genealogy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/genealogy.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/life.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/life.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/life.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/life.html"/>
+  </url>
+  <url>
+    <loc>https://pusane.net/tr/life.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pusane.net/life.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://pusane.net/tr/life.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pusane.net/life.html"/>
+  </url>
+</urlset>

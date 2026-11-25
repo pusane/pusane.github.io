@@ -3,7 +3,8 @@
 #   _tools/pages-tr/*.html  -> Turkish pages in tr/
 # First line of every page body: title|description|active-nav|extra-scripts
 # Every change should be made in BOTH folders so the two sites stay parallel.
-import os, re
+import os, re, json
+SITE = 'https://pusane.net/'
 SP = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(SP) + '/'
 
 L = {
@@ -35,17 +36,22 @@ HEAD = '''<!doctype html>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="{base}assets/img/portrait.jpg">
+<link rel="canonical" href="{canon}">
+<meta property="og:type" content="{og_type}">
+<meta property="og:url" content="{canon}">
+<meta property="og:locale" content="{og_locale}">
+<meta property="og:image" content="https://pusane.net/assets/img/portrait.jpg">
 <meta name="theme-color" content="#ffffff">
 <link rel="alternate" hreflang="en" href="{en_href}">
 <link rel="alternate" hreflang="tr" href="{tr_href}">
+<link rel="alternate" hreflang="x-default" href="{en_href}">
 <link rel="icon" href="{base}assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/css/site.css">
 <link rel="stylesheet" href="{base}assets/css/skin-swiss.css">
-<script>window.BASE='{base}';try{{document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'}}catch(e){{document.documentElement.dataset.theme='light'}}</script>
+<script>window.BASE='{base}';try{{document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'}}catch(e){{document.documentElement.dataset.theme='light'}}</script>{jsonld}
 </head>
 <body>
 <a class="skip" href="#main">{skip}</a>
@@ -103,6 +109,25 @@ def rebase(body, base):
     if not base: return body
     return re.sub(r'''(["'(])assets/''', lambda m: m.group(1) + base + 'assets/', body)
 
+def url(lang, name):
+    """Absolute URL of a page; index pages map to their folder."""
+    return SITE + L[lang]['out'] + ('' if name == 'index.html' else name)
+
+def person(lang):
+    """schema.org Person for the home pages, so search engines tie the other profiles to this site."""
+    return {
+        '@context': 'https://schema.org', '@type': 'Person',
+        'name': 'Ali Emre Pusane', 'honorificPrefix': 'Prof. Dr.',
+        'jobTitle': 'Professor' if lang == 'en' else 'Profesör',
+        'url': SITE, 'image': SITE + 'assets/img/portrait.jpg',
+        'worksFor': {'@type': 'CollegeOrUniversity', 'name': 'Boğaziçi University', 'url': 'https://bogazici.edu.tr'},
+        'alumniOf': [{'@type': 'CollegeOrUniversity', 'name': 'University of Notre Dame'},
+                     {'@type': 'CollegeOrUniversity', 'name': 'Istanbul Technical University'}],
+        'knowsAbout': ['Digital communications', 'Error control coding', 'Signal analysis', 'Radar signal processing'],
+        'sameAs': ['https://scholar.google.com/citations?user=kb9sJBYAAAAJ', 'https://www.linkedin.com/in/alipusane/',
+                   'https://academics.bogazici.edu.tr/public/ali.pusane', 'https://avesis.bogazici.edu.tr/ali.pusane'],
+    }
+
 for lang, c in L.items():
     os.makedirs(ROOT + c['out'], exist_ok=True)
     for name in FILES:
@@ -114,10 +139,23 @@ for lang, c in L.items():
         nav = '\n'.join(f'        <a href="{h}"' + (' aria-current="page"' if h == name else '') + f'>{t}</a>' for h, t in zip(FILES, c['navl']))
         fnav = '\n'.join(f'          <li><a href="{h}">{t}</a></li>' for h, t in zip(FILES, c['navl']))
         sc = '\n'.join(f'<script src="{c["base"]}{s.strip()}"></script>' for s in scripts.split(',') if s.strip())
-        en_href = ('' if lang == 'en' else '../') + name
-        tr_href = ('tr/' if lang == 'en' else '') + name
+        en_href, tr_href = url('en', name), url('tr', name)
+        canon = url(lang, name)
+        jsonld = '' if name != 'index.html' else '\n<script type="application/ld+json">' + json.dumps(person(lang), ensure_ascii=False) + '</script>'
         page = HEAD.format(lang=lang, title=title, desc=desc, nav=nav, en_href=en_href, tr_href=tr_href,
+                           canon=canon, jsonld=jsonld, og_type='profile' if name == 'index.html' else 'website',
+                           og_locale='en_US' if lang == 'en' else 'tr_TR',
                            other_href=c['other'] + name, other_lang='tr' if lang == 'en' else 'en', **c) \
              + rebase(body.rstrip(), c['base']) + '\n' + FOOT.format(fnav=fnav, scripts=sc, **c)
         open(ROOT + c['out'] + name, 'w').write(page)
         print('wrote', c['out'] + name)
+
+# sitemap.xml with language alternates, and robots.txt pointing at it
+urls = []
+for name in FILES:
+    alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{h}" href="{url(l, name)}"/>' for h, l in (('en', 'en'), ('tr', 'tr'), ('x-default', 'en')))
+    for lang in L:
+        urls.append(f'  <url>\n    <loc>{url(lang, name)}</loc>{alts}\n  </url>')
+open(ROOT + 'sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(urls) + '\n</urlset>\n')
+open(ROOT + 'robots.txt', 'w').write('User-agent: *\nAllow: /\nDisallow: /_tools/\n\nSitemap: ' + SITE + 'sitemap.xml\n')
+print('wrote sitemap.xml, robots.txt')
